@@ -16,13 +16,13 @@ AltGr+B → {   AltGr+N → }   AltGr+Í → <   AltGr+Y → >
 
 On macOS those characters live in unintuitive places. This project ships a
 native `.keylayout` that keeps Apple's Hungarian layout completely intact and
-changes exactly thirteen keys — in the Option layer and, mirrored exactly, in
+changes exactly fourteen keys — in the Option layer and, mirrored exactly, in
 the Shift+Option layer — so that:
 
 ```text
 Option+Q → @   Option+W → |   Option+E → \   Option+F → [   Option+G → ]
 Option+V → @   Option+B → {   Option+N → }   Option+Í → <   Option+Y → >
-Option+- → *   Option+C → &   Option+, → ;
+Option+- → *   Option+C → &   Option+, → ;   Option+É → $
 ```
 
 `Shift + . → :` must remain unchanged, along with everything else.
@@ -53,7 +53,7 @@ Option+- → *   Option+C → &   Option+, → ;
   * table 1: shift (`anyShift caps?`)
   * table 2: caps lock (`caps command?`)
   * table 3: **Option layer** (`anyOption caps?`) ← the AltGr changes are here
-  * table 4: shift+option (`anyShift anyOption caps? command?`) — the thirteen
+  * table 4: shift+option (`anyShift anyOption caps? command?`) — the fourteen
     AltGr keys mirror the Option layer here (Shift + Option + key ==
     Option + key)
   * table 5: caps+option (`anyOption caps command?`)
@@ -117,6 +117,7 @@ Option layer (`<keyMap index="3">`):
 | 44 | - | `*` | `–` (en dash) |
 | 8 | C | `&` (written `&#x26;`) | `ć` |
 | 43 | , | `;` | `–` (dash dead key starter) |
+| 41 | É | `$` | `…` (horizontal ellipsis) |
 
 Shift+Option layer (`<keyMap index="4">`), same outputs:
 
@@ -135,6 +136,7 @@ Shift+Option layer (`<keyMap index="4">`), same outputs:
 | 44 | - | `*` | `—` (em dash) |
 | 8 | C | `&` (written `&#x26;`) | `©` |
 | 43 | , | `;` | `*` |
+| 41 | É | `$` | `ō` (o-macron) |
 
 `Shift + . → :` lives in table 1 (shift layer), key code 47, and is unchanged.
 
@@ -168,7 +170,7 @@ Apple's compiled layout.
 
 You MUST:
 
-* preserve all existing mappings and all AltGr mappings (the thirteen keys, in
+* preserve all existing mappings and all AltGr mappings (the fourteen keys, in
   both the Option and the Shift+Option layers);
 * avoid unrelated keyboard-layout changes — every other cell of every table is
   a verified copy of Apple's Hungarian layout;
@@ -221,6 +223,7 @@ Option + Y → >
 Option + - → *
 Option + C → &
 Option + , → ;
+Option + É → $
 Shift + Option + Q → @
 Shift + Option + W → |
 Shift + Option + E → \
@@ -234,6 +237,7 @@ Shift + Option + Y → >
 Shift + Option + - → *
 Shift + Option + C → &
 Shift + Option + , → ;
+Shift + Option + É → $
 Shift + . → :
 ```
 
@@ -249,9 +253,10 @@ the file with the private `TISRegisterInputSource` or simply install it), probe
 it the same way, and diff **semantically** (mapping each layout's internal dead
 key state numbers to the five states by their terminator characters — the
 compiled state numbers are file-internal and differ between compilations). The
-verified result for the current layout is exactly the 25 intended key/layer
-combos (13 keys × 2 layers, Option and Shift+Option) across 6 dead-key states
-= 150 differing cells, and nothing else. See
+verified result for the current layout is exactly the 27 intended key/layer
+combos (14 keys × 2 layers, Option and Shift+Option, minus Option + Q which
+already matches Apple's `@`) across 6 dead-key states = 162 differing cells,
+and nothing else. See
 `docs/development.md` for details.
 
 ## Fn / Globe key handling

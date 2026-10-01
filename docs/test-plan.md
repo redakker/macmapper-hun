@@ -27,6 +27,7 @@ not merely that a key event was generated.
 - [ ] Option + - → `*`
 - [ ] Option + C → `&`
 - [ ] Option + , → `;`
+- [ ] Option + É → `$`
 
 (`@` is intended on **both** Option + Q and Option + V.)
 
@@ -46,6 +47,7 @@ alternative character and no uppercase/language-specific mapping):
 - [ ] Shift + Option + - → `*`
 - [ ] Shift + Option + C → `&`
 - [ ] Shift + Option + , → `;`
+- [ ] Shift + Option + É → `$`
 
 ## Fn / Globe key — not possible (documented limitation)
 
@@ -87,7 +89,7 @@ here.
   - [ ] Option + 0 → `}` (still)
   - [ ] Option + Ü → `\` (still; the Ü key was never changed)
   - [ ] Option + X → `»`
-  - [ ] Shift + Option + X → `>` (still; X is not one of the thirteen keys)
+  - [ ] Shift + Option + X → `>` (still; X is not one of the fourteen keys)
   - [ ] Command + Option + N → `~` (still)
   - [ ] Command + Option + , → `–` (still; the dash dead key is gone, but the
     character itself remains here)
@@ -106,7 +108,7 @@ here.
 ## Applications
 
 Repeat the "Required mappings" block (at least Option + Q, E, F, G, V, Í, Y,
--, C, , and the corresponding Shift+Option rows) in each of:
+-, C, ,, É and the corresponding Shift+Option rows) in each of:
 
 - [ ] Terminal
 - [ ] iTerm2 (if installed)

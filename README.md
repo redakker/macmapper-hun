@@ -19,6 +19,7 @@ keyboard produces with `AltGr` (right Alt) to the **Option** key of a Mac.
 | Option + - | `*` |
 | Option + C | `&` |
 | Option + , | `;` |
+| Option + É | `$` |
 
 The existing colon mapping is **not** changed:
 
@@ -31,7 +32,7 @@ Shift + . → :
 This project ships one file: a native macOS keyboard layout
 ([`layout/Hungarian-AltGr.keylayout`](layout/Hungarian-AltGr.keylayout)) called
 **Hungarian AltGr**. It is a copy of Apple's Hungarian layout in which exactly
-thirteen keys were changed in the Option layer, and the same thirteen keys were
+fourteen keys were changed in the Option layer, and the same fourteen keys were
 changed in the Shift+Option layer (Shift+Option mirrors Option). No other key
 combination was modified.
 
@@ -86,11 +87,12 @@ Option + Y → >
 Option + - → *
 Option + C → &
 Option + , → ;
+Option + É → $
 ```
 
 (`@` is intentionally on **both** Option + Q and Option + V.)
 
-`Shift + Option` produces **exactly the same characters** for these thirteen
+`Shift + Option` produces **exactly the same characters** for these fourteen
 keys — Shift does not introduce an alternative character or an
 uppercase/language-specific mapping:
 
@@ -108,6 +110,7 @@ Shift + Option + Y → >
 Shift + Option + - → *
 Shift + Option + C → &
 Shift + Option + , → ;
+Shift + Option + É → $
 ```
 
 The existing colon mapping remains unchanged:
@@ -120,8 +123,9 @@ Nothing else was changed. The layout was machine-verified against the stock
 Apple Hungarian layout of macOS 26.6.2: all 128 key codes, all 8 modifier
 layers and all 5 dead-key states — including the dead-key **state transitions**
 — are identical except for the cells listed above. That is exactly
-25 key/layer combinations (thirteen keys × two layers) × 6 dead-key states
-= 150 differing cells; every other cell of every table is byte-for-byte
+27 key/layer combinations (fourteen keys × two layers, minus Option + Q which
+already equals Apple's `@`) × 6 dead-key states = 162 differing cells; every
+other cell of every table is byte-for-byte
 identical to Apple's layout, and the compiled modifier-state table is
 identical. (The comparison maps each layout's internal dead-key state numbers
 to the five states by their terminator characters, because the compiled state
@@ -147,6 +151,7 @@ The Option layer previously produced the following characters on these keys
 | Option + - | `–` (en dash) | `*` |
 | Option + C | `ć` | `&` |
 | Option + , | starts the `–` (dash) dead key | `;` |
+| Option + É | `…` (horizontal ellipsis) | `$` |
 
 The Shift+Option layer previously produced these (now they mirror the Option
 layer):
@@ -166,11 +171,15 @@ layer):
 | Shift + Option + - | `—` (em dash) | `*` |
 | Shift + Option + C | `©` | `&` |
 | Shift + Option + , | `*` | `;` |
+| Shift + Option + É | `ō` (o-macron) | `$` |
 
 Notes:
 
 * `@` is now on both Option + Q and Option + V. `\` moved from Option + Q to
   Option + E. `€` is no longer on Option + E.
+* `$` is now on Option + É and Shift + Option + É. `…` (ellipsis) is no longer
+  on Option + É, but it remains available as Command + Option + É. `ō`
+  (o-macron) is no longer on Shift + Option + É.
 * The `~` dead key no longer starts from Option + N, but `~` itself is still
   available as Command + Option + N.
 * The `–` (dash) dead key no longer starts from Option + , (that key now
@@ -179,7 +188,7 @@ Notes:
 * The other dead keys (Option + U `¨`, Option + I `^`,
   Shift + Option + Á `ˇ`) are unchanged and fully working — they were
   restored to exact Apple parity during this update (see below).
-* `Shift + Option + X` is unchanged (still `>`; X is not one of the thirteen
+* `Shift + Option + X` is unchanged (still `>`; X is not one of the fourteen
   keys), and `<` remains available on Option + Í.
 
 ## Right Option, Left Option — the honest limitation
@@ -316,8 +325,8 @@ investigation record.
 
    Type `Option + Q` → you should get `@`, `Option + E` → `\`,
    `Option + V` → `@`, `Option + Í` → `<`, `Option + Y` → `>`,
-   `Option + -` → `*`, `Option + C` → `&`, `Option + ,` → `;`, and
-   `Shift + .` → `:`.
+   `Option + -` → `*`, `Option + C` → `&`, `Option + ,` → `;`,
+   `Option + É` → `$`, and `Shift + .` → `:`.
    See [`docs/test-plan.md`](docs/test-plan.md) for the complete checklist.
 
 No logout is required *again* after adding the input source in System Settings.

@@ -98,11 +98,12 @@ Open any text editor (TextEdit is fine) and type:
 | Option + - | `*` |
 | Option + C | `&` |
 | Option + , | `;` |
+| Option + É | `$` |
 | Shift + Option + Q … , | same as Option alone (see note) |
 | Shift + . | `:` |
 
 `Shift + Option` produces exactly the same character as `Option` alone for
-these thirteen keys — e.g. `Shift + Option + Q` → `@`, `Shift + Option + E` →
+these fourteen keys — e.g. `Shift + Option + Q` → `@`, `Shift + Option + E` →
 `\`, `Shift + Option + V` → `@`, `Shift + Option + Y` → `>`. (Remember: both
 Option keys behave the same — see the README section on the Right Option
 limitation.)

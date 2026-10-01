@@ -687,7 +687,7 @@
 			<key code="38" output="∆" />
 			<key code="39" output="^" />
 			<key code="40" output="Ż" />
-			<key code="41" output="…" />
+			<key code="41" output="$" />
 			<key code="42" output="`" />
 			<key code="43" output=";" />
 			<key code="44" output="*" />
@@ -807,7 +807,7 @@
 				</action>
 			</key>
 			<key code="40" output="&#x26;" />
-			<key code="41" output="ō" />
+			<key code="41" output="$" />
 			<key code="42" output="Ģ" />
 			<key code="43" output=";" />
 			<key code="44" output="*" />

@@ -17,9 +17,10 @@ layouts as readable XML (they live in the compiled
 the live Apple Hungarian layout** by probing the text-input engine, then
 verified cell-by-cell against it (see "Verification" below). The result is a
 file that behaves identically to Apple's Hungarian layout except for exactly
-thirteen keys changed in the Option layer and mirrored in the Shift+Option
-layer (Shift+Option mirrors Option exactly), i.e. 25 key/layer combinations
-= 150 cells across the six dead-key states.
+fourteen keys changed in the Option layer and mirrored in the Shift+Option
+layer (Shift+Option mirrors Option exactly), i.e. 28 key/layer combinations,
+of which 27 differ from Apple's (Option+Q already equals Apple's `@`)
+= 162 cells across the six dead-key states.
 
 ## File structure
 
@@ -196,7 +197,7 @@ Example: make `Option + A` produce `~` (it currently produces `ą`):
 
 ## Modifying an existing mapping
 
-Same procedure. The thirteen AltGr entries currently look like this in the
+Same procedure. The fourteen AltGr entries currently look like this in the
 Option layer (`<keyMap index="3">`):
 
 ```xml
@@ -213,6 +214,7 @@ Option layer (`<keyMap index="3">`):
 <key code="44" output="*" />      <!-- Option+- (hyphen) -->
 <key code="8"  output="&#x26;" /> <!-- Option+C (ampersand) -->
 <key code="43" output=";" />      <!-- Option+, (comma) -->
+<key code="41" output="$" />      <!-- Option+É -->
 ```
 
 … and identically in the Shift+Option layer (`<keyMap index="4">`), so that
@@ -232,6 +234,7 @@ Option layer (`<keyMap index="3">`):
 <key code="44" output="*" />      <!-- Shift+Option+- (hyphen) -->
 <key code="8"  output="&#x26;" /> <!-- Shift+Option+C (ampersand) -->
 <key code="43" output=";" />      <!-- Shift+Option+, (comma) -->
+<key code="41" output="$" />      <!-- Shift+Option+É -->
 ```
 
 When you change one of these keys, change **both** entries, unless there is a
@@ -300,7 +303,7 @@ truth.
    * Compile the edited XML (install it or `TISRegisterInputSource`), get its
      layout data, and probe it identically.
    * Diff both matrices. The accepted result for this project is: **exactly
-     150 differing cells = 2 layers (Option, Shift+Option) × 13 keys
+     162 differing cells = 2 layers (Option, Shift+Option) × 14 keys
      (minus Option+Q, which equals Apple's `@` again) × 6 dead-key states**,
      and an identical 255-entry modifier table.
 
