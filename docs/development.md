@@ -17,10 +17,10 @@ layouts as readable XML (they live in the compiled
 the live Apple Hungarian layout** by probing the text-input engine, then
 verified cell-by-cell against it (see "Verification" below). The result is a
 file that behaves identically to Apple's Hungarian layout except for exactly
-fourteen keys changed in the Option layer and mirrored in the Shift+Option
-layer (Shift+Option mirrors Option exactly), i.e. 28 key/layer combinations,
-of which 27 differ from Apple's (Option+Q already equals Apple's `@`)
-= 162 cells across the six dead-key states.
+fifteen keys changed in the Option layer and mirrored in the Shift+Option
+layer (Shift+Option mirrors Option exactly), i.e. 30 key/layer combinations,
+of which 29 differ from Apple's (Option+Q already equals Apple's `@`)
+= 174 cells across the six dead-key states.
 
 ## File structure
 
@@ -91,7 +91,7 @@ The `code` attribute is the macOS virtual key code (ANSI keyboard):
 
 ```text
 12 = Q     13 = W     14 = E     3 = F     5 = G     9 = V     11 = B
-45 = N     50 = Í (key left of Y / ANSI `)    6 = Y (ANSI Z position)
+45 = N     50 = Í (key left of Y / ANSI `)    6 = Y (ANSI Z position)    7 = X
 8 = C      43 = , (comma)    44 = - (hyphen, ANSI slash position)
 47 = . (period; Shift+. is the colon mapping)
 ```
@@ -197,7 +197,7 @@ Example: make `Option + A` produce `~` (it currently produces `ą`):
 
 ## Modifying an existing mapping
 
-Same procedure. The fourteen AltGr entries currently look like this in the
+Same procedure. The fifteen AltGr entries currently look like this in the
 Option layer (`<keyMap index="3">`):
 
 ```xml
@@ -211,6 +211,7 @@ Option layer (`<keyMap index="3">`):
 <key code="45" output="}" />      <!-- Option+N -->
 <key code="50" output="&#x3c;" /> <!-- Option+Í (less-than) -->
 <key code="6"  output="&#x3e;" /> <!-- Option+Y (greater-than) -->
+<key code="7"  output="#" />      <!-- Option+X -->
 <key code="44" output="*" />      <!-- Option+- (hyphen) -->
 <key code="8"  output="&#x26;" /> <!-- Option+C (ampersand) -->
 <key code="43" output=";" />      <!-- Option+, (comma) -->
@@ -231,6 +232,7 @@ Option layer (`<keyMap index="3">`):
 <key code="45" output="}" />      <!-- Shift+Option+N -->
 <key code="50" output="&#x3c;" /> <!-- Shift+Option+Í (less-than) -->
 <key code="6"  output="&#x3e;" /> <!-- Shift+Option+Y (greater-than) -->
+<key code="7"  output="#" />      <!-- Shift+Option+X -->
 <key code="44" output="*" />      <!-- Shift+Option+- (hyphen) -->
 <key code="8"  output="&#x26;" /> <!-- Shift+Option+C (ampersand) -->
 <key code="43" output=";" />      <!-- Shift+Option+, (comma) -->
@@ -303,7 +305,7 @@ truth.
    * Compile the edited XML (install it or `TISRegisterInputSource`), get its
      layout data, and probe it identically.
    * Diff both matrices. The accepted result for this project is: **exactly
-     162 differing cells = 2 layers (Option, Shift+Option) × 14 keys
+     174 differing cells = 2 layers (Option, Shift+Option) × 15 keys
      (minus Option+Q, which equals Apple's `@` again) × 6 dead-key states**,
      and an identical 255-entry modifier table.
 

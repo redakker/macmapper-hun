@@ -635,7 +635,7 @@
 			<key code="4" output="ķ" />
 			<key code="5" output="]" />
 			<key code="6" output="&#x3e;" />
-			<key code="7" output="»" />
+			<key code="7" output="#" />
 			<key code="8" output="&#x26;" />
 			<key code="9" output="@" />
 			<key code="10" output="¬" />
@@ -764,7 +764,7 @@
 			<key code="4" output="Õ" />
 			<key code="5" output="]" />
 			<key code="6" output="&#x3e;" />
-			<key code="7" output="&#x3e;" />
+			<key code="7" output="#" />
 			<key code="8" output="&#x26;" />
 			<key code="9" output="@" />
 			<key code="10" output="•" />

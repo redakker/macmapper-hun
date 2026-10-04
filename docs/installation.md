@@ -95,6 +95,7 @@ Open any text editor (TextEdit is fine) and type:
 | Option + N | `}` |
 | Option + Í | `<` |
 | Option + Y | `>` |
+| Option + X | `#` |
 | Option + - | `*` |
 | Option + C | `&` |
 | Option + , | `;` |
@@ -103,13 +104,13 @@ Open any text editor (TextEdit is fine) and type:
 | Shift + . | `:` |
 
 `Shift + Option` produces exactly the same character as `Option` alone for
-these fourteen keys — e.g. `Shift + Option + Q` → `@`, `Shift + Option + E` →
+these fifteen keys — e.g. `Shift + Option + Q` → `@`, `Shift + Option + E` →
 `\`, `Shift + Option + V` → `@`, `Shift + Option + Y` → `>`. (Remember: both
 Option keys behave the same — see the README section on the Right Option
 limitation.)
 
 Then verify a few untouched combinations, e.g. `é`, `Shift + 1` → `'`,
-`Option + Ü` → `\`, `Option + U` then `A` → `ä`, `Shift + Option + X` → `>`.
+`Option + Ü` → `\`, `Option + U` then `A` → `ä`, `Option + A` → `ą`.
 The full checklist is in [`test-plan.md`](test-plan.md).
 
 ## 8. Restarting applications

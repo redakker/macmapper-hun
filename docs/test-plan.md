@@ -24,6 +24,7 @@ not merely that a key event was generated.
 - [ ] Option + N → `}`
 - [ ] Option + Í → `<`
 - [ ] Option + Y → `>`
+- [ ] Option + X → `#`
 - [ ] Option + - → `*`
 - [ ] Option + C → `&`
 - [ ] Option + , → `;`
@@ -44,6 +45,7 @@ alternative character and no uppercase/language-specific mapping):
 - [ ] Shift + Option + N → `}`
 - [ ] Shift + Option + Í → `<`
 - [ ] Shift + Option + Y → `>`
+- [ ] Shift + Option + X → `#`
 - [ ] Shift + Option + - → `*`
 - [ ] Shift + Option + C → `&`
 - [ ] Shift + Option + , → `;`
@@ -88,8 +90,7 @@ here.
   - [ ] Option + 7 → `{` (still)
   - [ ] Option + 0 → `}` (still)
   - [ ] Option + Ü → `\` (still; the Ü key was never changed)
-  - [ ] Option + X → `»`
-  - [ ] Shift + Option + X → `>` (still; X is not one of the fourteen keys)
+  - [ ] Command + Option + X → `»` (still; only the Option layers changed)
   - [ ] Command + Option + N → `~` (still)
   - [ ] Command + Option + , → `–` (still; the dash dead key is gone, but the
     character itself remains here)
@@ -108,7 +109,7 @@ here.
 ## Applications
 
 Repeat the "Required mappings" block (at least Option + Q, E, F, G, V, Í, Y,
--, C, ,, É and the corresponding Shift+Option rows) in each of:
+X, -, C, ,, É and the corresponding Shift+Option rows) in each of:
 
 - [ ] Terminal
 - [ ] iTerm2 (if installed)
@@ -132,7 +133,7 @@ Notes:
    are easy to break with a bad `next=` edit.
 4. Spot-check 3–5 untouched keys across different layers (e.g. `é`,
    `Shift + 1` → `'`, `Option + Ü` → `\`, `Option + 1` → `&`,
-   `Shift + Option + X` → `>`).
+   `Option + A` → `ą`).
 5. If an entry was added/changed on a key that participates in a dead-key
    action, re-test that dead key.
 6. Re-install (log out/in) before concluding a change has no effect.
